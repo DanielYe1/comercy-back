@@ -7,4 +7,14 @@ public class PagamentoDebito extends Pagamento {
         super(total, type);
         this.numeroCartao = numeroCartao;
     }
+
+    @Override
+    public boolean autorizaPagamento() {
+        return super.autorizaPagamento();
+    }
+
+    @Override
+    public boolean efetuaPagamento() {
+        return super.efetuaPagamento();
+    }
 }

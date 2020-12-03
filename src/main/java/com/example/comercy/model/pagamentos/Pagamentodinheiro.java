@@ -7,4 +7,14 @@ public class Pagamentodinheiro extends Pagamento {
         super(total, type);
         this.troco = troco;
     }
+
+    @Override
+    public boolean autorizaPagamento() {
+        return super.autorizaPagamento();
+    }
+
+    @Override
+    public boolean efetuaPagamento() {
+        return super.efetuaPagamento();
+    }
 }

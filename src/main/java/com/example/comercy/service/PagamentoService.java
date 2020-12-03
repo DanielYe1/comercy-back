@@ -15,7 +15,12 @@ public class PagamentoService {
     public Pagamento processarPagamento(PagamentoDTO pagamento) {
         Pagamento pagamentoProcessado = PagamentoCreator.pagamentoFactoryMethod(pagamento);
 
-        return repository.insert(pagamentoProcessado);
+        if (pagamentoProcessado.autorizaPagamento()){
+            pagamentoProcessado.efetuaPagamento();
+            return repository.insert(pagamentoProcessado);
+        }
+
+        return null;
     }
 }
 

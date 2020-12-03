@@ -1,6 +1,9 @@
 package com.example.comercy.model.vendas;
 
 public class Item {
-    Float preco;
-    
+    Integer preco;
+    Integer quantidade;
+    String codigoDeBarras;
+    String urlImagem;
+    String descricao;
 }

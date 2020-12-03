@@ -1,8 +1,14 @@
 package com.example.comercy.model.vendas;
 
+import com.example.comercy.model.pagamentos.NotaFiscal;
+import com.example.comercy.model.pagamentos.Pagamento;
+
 import java.util.List;
+import java.util.Map;
 
 public class Venda {
-    List<Item> itens;
-
+    private String idCliente;
+    private Map<String,Integer> itensEQuantidade;
+    private Pagamento pagamento;
+    private NotaFiscal notaFiscal;
 }

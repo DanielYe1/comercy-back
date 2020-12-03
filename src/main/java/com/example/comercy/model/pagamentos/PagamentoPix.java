@@ -8,11 +8,13 @@ public class PagamentoPix extends Pagamento {
         this.chave = chave;
     }
 
-    public String getChave() {
-        return chave;
+    @Override
+    public boolean autorizaPagamento() {
+        return super.autorizaPagamento();
     }
 
-    public void setChave(String chave) {
-        this.chave = chave;
+    @Override
+    public boolean efetuaPagamento() {
+        return super.efetuaPagamento();
     }
 }
