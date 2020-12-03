@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class Venda {
     private String idCliente;
-    private Map<String,Integer> itensEQuantidade;
+    private Map<String,Integer> itens;
     private Pagamento pagamento;
     private NotaFiscal notaFiscal;
 }
