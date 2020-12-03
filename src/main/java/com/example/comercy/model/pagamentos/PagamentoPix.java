@@ -1,4 +1,5 @@
 package com.example.comercy.model.pagamentos;
 
-public class PagamentoPix {
+public class PagamentoPix extends Pagamento {
+    private String chave;
 }

@@ -1,4 +1,5 @@
 package com.example.comercy.model.pagamentos;
 
-public class Pagamentodinheiro {
+public class Pagamentodinheiro extends Pagamento {
+    private Integer troco;
 }
