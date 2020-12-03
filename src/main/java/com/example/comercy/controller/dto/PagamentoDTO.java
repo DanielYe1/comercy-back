@@ -1,4 +1,4 @@
-package com.example.comercy.controller.model;
+package com.example.comercy.controller.dto;
 
 public class PagamentoDTO {
     private Integer total;

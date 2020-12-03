@@ -1,6 +1,6 @@
 package com.example.comercy.service;
 
-import com.example.comercy.controller.model.PagamentoDTO;
+import com.example.comercy.controller.dto.PagamentoDTO;
 import com.example.comercy.model.pagamentos.*;
 
 public class PagamentoCreator {

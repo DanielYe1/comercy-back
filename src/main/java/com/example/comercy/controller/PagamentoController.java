@@ -1,9 +1,7 @@
 package com.example.comercy.controller;
 
-import com.example.comercy.controller.model.PagamentoDTO;
+import com.example.comercy.controller.dto.PagamentoDTO;
 import com.example.comercy.model.pagamentos.Pagamento;
-import com.example.comercy.model.pagamentos.PagamentoCredito;
-import com.example.comercy.model.pagamentos.PagamentoPix;
 import com.example.comercy.service.PagamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
