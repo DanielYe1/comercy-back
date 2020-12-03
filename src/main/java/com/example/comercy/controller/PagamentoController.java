@@ -1,6 +1,7 @@
 package com.example.comercy.controller;
 
 import com.example.comercy.controller.model.PagamentoDTO;
+import com.example.comercy.model.pagamentos.Pagamento;
 import com.example.comercy.service.PagamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,9 +22,9 @@ public class PagamentoController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity efetuarPagamento(@RequestBody PagamentoDTO pagamento) {
 
-        service.processarPagamento(pagamento);
+        Pagamento pagamentoProcessado = service.processarPagamento(pagamento);
 
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity(pagamentoProcessado, HttpStatus.OK);
     }
 
 }
