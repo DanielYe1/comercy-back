@@ -5,16 +5,16 @@ import com.example.comercy.model.pagamentos.*;
 
 public class PagamentoCreator {
 
-    public static Pagamento criaPagamento(PagamentoDTO pagamento) {
+    public static Pagamento pagamentoFactoryMethod(PagamentoDTO pagamento) {
         switch (pagamento.getType()) {
             case "credito":
-                return new PagamentoCredito();
+                return new PagamentoCredito(pagamento.getTotal(), pagamento.getType(), pagamento.getNumeroCartao());
             case "debito":
-                return new PagamentoDebito();
+                return new PagamentoDebito(pagamento.getTotal(), pagamento.getType(), pagamento.getNumeroCartao());
             case "dinheiro":
-                return new Pagamentodinheiro();
+                return new Pagamentodinheiro(pagamento.getTotal(), pagamento.getType(), pagamento.getValorRecebido());
             case "pix":
-                return new PagamentoPix();
+                return new PagamentoPix(pagamento.getTotal(), pagamento.getType(), pagamento.getChave());
         }
         return null;
     }

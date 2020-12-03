@@ -7,4 +7,12 @@ public class PagamentoPix extends Pagamento {
         super(total, type);
         this.chave = chave;
     }
+
+    public String getChave() {
+        return chave;
+    }
+
+    public void setChave(String chave) {
+        this.chave = chave;
+    }
 }

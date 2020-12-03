@@ -2,29 +2,28 @@ package com.example.comercy.controller;
 
 import com.example.comercy.controller.model.PagamentoDTO;
 import com.example.comercy.model.pagamentos.Pagamento;
+import com.example.comercy.model.pagamentos.PagamentoCredito;
+import com.example.comercy.model.pagamentos.PagamentoPix;
 import com.example.comercy.service.PagamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @CrossOrigin
+@RequestMapping("/pagamento")
 public class PagamentoController {
 
     @Autowired
     PagamentoService service;
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST, produces = "application/json; charset=utf-8")
     public ResponseEntity efetuarPagamento(@RequestBody PagamentoDTO pagamento) {
 
         Pagamento pagamentoProcessado = service.processarPagamento(pagamento);
 
-        return new ResponseEntity(pagamentoProcessado, HttpStatus.OK);
+        ResponseEntity responseEntity = new ResponseEntity(pagamentoProcessado, HttpStatus.OK);
+        return responseEntity;
     }
-
 }

@@ -13,9 +13,7 @@ public class PagamentoService {
     PagamentoRepository repository;
 
     public Pagamento processarPagamento(PagamentoDTO pagamento) {
-        Pagamento pagamentoProcessado = PagamentoCreator.criaPagamento(pagamento);
-
-
+        Pagamento pagamentoProcessado = PagamentoCreator.pagamentoFactoryMethod(pagamento);
 
         return repository.insert(pagamentoProcessado);
     }
