@@ -16,6 +16,10 @@ public class Item {
         this.descricao = descricao;
     }
 
+    public String getId() {
+        return id;
+    }
+
     public Integer getPreco() {
         return preco;
     }
