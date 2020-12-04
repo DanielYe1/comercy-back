@@ -11,4 +11,11 @@ public class Venda {
     private Map<String,Integer> itens;
     private Pagamento pagamento;
     private NotaFiscal notaFiscal;
+
+    public Venda(String idCliente, Map<String, Integer> itens, Pagamento pagamento, NotaFiscal notaFiscal) {
+        this.idCliente = idCliente;
+        this.itens = itens;
+        this.pagamento = pagamento;
+        this.notaFiscal = notaFiscal;
+    }
 }
