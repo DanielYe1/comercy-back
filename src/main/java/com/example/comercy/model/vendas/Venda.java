@@ -18,4 +18,20 @@ public class Venda {
         this.pagamento = pagamento;
         this.notaFiscal = notaFiscal;
     }
+
+    public String getIdCliente() {
+        return idCliente;
+    }
+
+    public Map<String, Integer> getItens() {
+        return itens;
+    }
+
+    public Pagamento getPagamento() {
+        return pagamento;
+    }
+
+    public NotaFiscal getNotaFiscal() {
+        return notaFiscal;
+    }
 }

@@ -5,9 +5,11 @@ import com.example.comercy.model.pagamentos.Pagamento;
 import com.example.comercy.model.repositorio.VendaRepository;
 import com.example.comercy.model.vendas.Venda;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
+@Service
 public class VendaService {
 
     @Autowired

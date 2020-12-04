@@ -26,4 +26,19 @@ public class NotaFiscal {
     }
 
 
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public Map<String, Integer> getItens() {
+        return itens;
+    }
+
+    public Integer getValorTotal() {
+        return valorTotal;
+    }
+
+    public Integer getTributos() {
+        return tributos;
+    }
 }
