@@ -4,6 +4,11 @@ public class ClientePreferencial extends Cliente {
 
     private Integer quantidadeDePontos;
 
+    public ClientePreferencial(String id, Integer quantidadeDePontos) {
+        super(id);
+        this.quantidadeDePontos = quantidadeDePontos;
+    }
+
     public boolean isPreferencial(String cpf) {
         return true;
     }
