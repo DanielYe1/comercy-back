@@ -4,16 +4,16 @@ import com.example.comercy.model.pessoas.Cliente;
 import com.example.comercy.model.repositorio.ClienteRepository;
 
 //Singleton
-public final class ClienteService {
+public final class ClienteServiceSingleton {
 
-    private static final ClienteService INSTANCE = new ClienteService();
+    private static final ClienteServiceSingleton INSTANCE = new ClienteServiceSingleton();
     private static final ClienteRepository REPOSITORY = new ClienteRepository();
 
-    public static ClienteService getInstance(){
+    public static ClienteServiceSingleton getInstance(){
         return INSTANCE;
     }
 
-    public static void adicionarCliente(Cliente cliente){
+    public void adicionarCliente(Cliente cliente){
         REPOSITORY.addCliente(cliente);
     }
 
