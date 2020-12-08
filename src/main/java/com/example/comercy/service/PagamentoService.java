@@ -26,8 +26,8 @@ public class PagamentoService {
         return new NotaFiscal(itens, total);
     }
 
-    public Pagamento processarPagamento(PagamentoDTO pagamento) {
-        Pagamento pagamentoProcessado = PagamentoCreator.pagamentoFactoryMethod(pagamento);
+    public Pagamento processarPagamento(PagamentoDTO pagamento, Integer valorTotal) {
+        Pagamento pagamentoProcessado = PagamentoCreator.pagamentoFactoryMethod(pagamento, valorTotal);
 
         // Polimorfismo
         if (pagamentoProcessado.autorizaPagamento()) {

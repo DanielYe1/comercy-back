@@ -2,19 +2,10 @@ package com.example.comercy.controller.dto;
 
 // DTO
 public class PagamentoDTO {
-    private Integer total;
     private String type;
     private String chave;
     private String numeroCartao;
     private Integer valorRecebido;
-
-    public Integer getTotal() {
-        return total;
-    }
-
-    public void setTotal(Integer total) {
-        this.total = total;
-    }
 
     public String getType() {
         return type;

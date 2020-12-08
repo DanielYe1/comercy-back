@@ -26,7 +26,7 @@ public class VendaController {
     public ResponseEntity efetuarPagamento(@RequestBody VendaDTO venda) {
         NotaFiscal notaFiscal = pagamentoService.gerarNotaFiscal(venda.getItens());
 
-        Pagamento pagamento = pagamentoService.processarPagamento(venda.getPagamento());
+        Pagamento pagamento = pagamentoService.processarPagamento(venda.getPagamento(), notaFiscal.getValorTotal());
 
         Venda vendaProcessada = vendaService.processarVenda(venda.getIdCliente(), venda.getItens(), pagamento, notaFiscal);
 
