@@ -18,7 +18,7 @@ public class NotaFiscal {
 
     public void gerarCodigoFiscal(){
         Random random = new Random();
-        this.codigo = Integer.toString(random.nextInt());
+        this.codigo = Integer.toString(Math.abs(random.nextInt()));
     }
 
     public void gerarTributos(){
