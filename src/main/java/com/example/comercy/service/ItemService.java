@@ -13,11 +13,6 @@ public class ItemService {
     @Autowired
     ItemRepository repository;
 
-    public void insereProdutos(){
-        Item item = new Item(100,10,"1234","","produto teste");
-        repository.insert(item);
-    }
-
     public Item add(Item item) {
         Item inserted = repository.insert(item);
         return inserted;

@@ -28,6 +28,7 @@ public class PagamentoService {
     public Pagamento processarPagamento(PagamentoDTO pagamento) {
         Pagamento pagamentoProcessado = PagamentoCreator.pagamentoFactoryMethod(pagamento);
 
+        // Polimorfismo
         if (pagamentoProcessado.autorizaPagamento()) {
             pagamentoProcessado.efetuaPagamento();
             return pagamentoProcessado;

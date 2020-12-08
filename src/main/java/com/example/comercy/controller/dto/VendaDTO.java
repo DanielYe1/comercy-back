@@ -2,6 +2,7 @@ package com.example.comercy.controller.dto;
 
 import java.util.Map;
 
+//DTO
 public class VendaDTO {
     private String idCliente;
     private Map<String,Integer> itens;

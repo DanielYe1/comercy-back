@@ -5,6 +5,7 @@ import com.example.comercy.model.pagamentos.*;
 
 public class PagamentoCreator {
 
+    //Factory method
     public static Pagamento pagamentoFactoryMethod(PagamentoDTO pagamento) {
         switch (pagamento.getType()) {
             case "credito":
@@ -12,7 +13,7 @@ public class PagamentoCreator {
             case "debito":
                 return new PagamentoDebito(pagamento.getTotal(), pagamento.getType(), pagamento.getNumeroCartao());
             case "dinheiro":
-                return new Pagamentodinheiro(pagamento.getTotal(), pagamento.getType(), pagamento.getValorRecebido());
+                return new PagamentoDinheiro(pagamento.getTotal(), pagamento.getType(), pagamento.getValorRecebido());
             case "pix":
                 return new PagamentoPix(pagamento.getTotal(), pagamento.getType(), pagamento.getChave());
         }

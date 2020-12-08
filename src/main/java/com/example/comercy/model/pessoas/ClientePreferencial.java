@@ -1,8 +1,23 @@
 package com.example.comercy.model.pessoas;
 
-public class ClientePreferencial {
+public class ClientePreferencial extends Cliente {
 
-    public boolean isPreferencial(String cpf){
+    private Integer quantidadeDePontos;
+
+    public boolean isPreferencial(String cpf) {
         return true;
+    }
+
+    public void aumentaPontosPorCompra(Integer valorDaCompra) {
+        this.quantidadeDePontos += valorDaCompra;
+    }
+
+    public Integer retiraDescontoPorPontos(Integer valorDaCompra) {
+        if (this.quantidadeDePontos >= valorDaCompra) {
+            this.quantidadeDePontos -= valorDaCompra;
+            return valorDaCompra;
+        }
+        this.quantidadeDePontos -= valorDaCompra;
+        return valorDaCompra - this.quantidadeDePontos;
     }
 }

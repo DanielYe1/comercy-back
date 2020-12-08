@@ -1,5 +1,6 @@
 package com.example.comercy.controller.dto;
 
+// DTO
 public class PagamentoDTO {
     private Integer total;
     private String type;
