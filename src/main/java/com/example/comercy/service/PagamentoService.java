@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
+//pure fabrication
 @Service
 public class PagamentoService {
 
