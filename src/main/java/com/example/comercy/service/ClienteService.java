@@ -7,14 +7,14 @@ import com.example.comercy.model.repositorio.ClienteRepository;
 public final class ClienteService {
 
     private static final ClienteService INSTANCE = new ClienteService();
-    private static final ClienteRepository repository = new ClienteRepository();
+    private static final ClienteRepository REPOSITORY = new ClienteRepository();
 
     public static ClienteService getInstance(){
         return INSTANCE;
     }
 
     public static void adicionarCliente(Cliente cliente){
-        repository.addCliente(cliente);
+        REPOSITORY.addCliente(cliente);
     }
 
 }

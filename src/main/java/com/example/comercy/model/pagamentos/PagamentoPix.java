@@ -17,4 +17,8 @@ public class PagamentoPix extends Pagamento {
     public boolean efetuaPagamento() {
         return super.efetuaPagamento();
     }
+
+    public String getChave() {
+        return chave;
+    }
 }

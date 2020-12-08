@@ -17,4 +17,8 @@ public class PagamentoCredito extends Pagamento {
     public boolean efetuaPagamento() {
         return super.efetuaPagamento();
     }
+
+    public String getNumeroCartao() {
+        return numeroCartao;
+    }
 }
