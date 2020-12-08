@@ -1,8 +1,7 @@
 package com.example.comercy.service;
 
 import com.example.comercy.controller.dto.PagamentoDTO;
-import com.example.comercy.model.pagamentos.NotaFiscal;
-import com.example.comercy.model.pagamentos.Pagamento;
+import com.example.comercy.model.pagamentos.*;
 import com.example.comercy.model.repositorio.ItemRepository;
 import com.example.comercy.model.vendas.Item;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +26,7 @@ public class PagamentoService {
     }
 
     public Pagamento processarPagamento(PagamentoDTO pagamento, Integer valorTotal) {
-        Pagamento pagamentoProcessado = PagamentoCreator.pagamentoFactoryMethod(pagamento, valorTotal);
+        Pagamento pagamentoProcessado = pagamentoFactoryMethod(pagamento, valorTotal);
 
         // Polimorfismo
         if (pagamentoProcessado.autorizaPagamento()) {
@@ -35,6 +34,21 @@ public class PagamentoService {
             return pagamentoProcessado;
         }
 
+        return null;
+    }
+
+    //Factory method
+    public static Pagamento pagamentoFactoryMethod(PagamentoDTO pagamento, Integer valorTotal) {
+        switch (pagamento.getType()) {
+            case "credito":
+                return new PagamentoCredito(valorTotal, pagamento.getType(), pagamento.getNumeroCartao());
+            case "debito":
+                return new PagamentoDebito(valorTotal, pagamento.getType(), pagamento.getNumeroCartao());
+            case "dinheiro":
+                return new PagamentoDinheiro(valorTotal, pagamento.getType(), pagamento.getValorRecebido());
+            case "pix":
+                return new PagamentoPix(valorTotal, pagamento.getType(), pagamento.getChave());
+        }
         return null;
     }
 }
