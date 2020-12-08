@@ -13,7 +13,7 @@ public final class ClienteServiceSingleton {
         return INSTANCE;
     }
 
-    public void adicionarCliente(Cliente cliente){
+    public static void adicionarCliente(Cliente cliente){
         REPOSITORY.addCliente(cliente);
     }
 
