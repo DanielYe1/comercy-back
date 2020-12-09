@@ -19,7 +19,10 @@ o script run.sh vem com os comandos necessários para recompilar o projeto e rod
 
 A aplicação utiliza a porta padrão 8080.
 
-Para fazer o teste em conjunto com o front-end, pode-se popular o banco de itens com o json:
+Alguns itens já foram populados no banco de dados da aplicação para testes. Esses dados podem ser vistos fazendo uma requisição get no endpoint:
+http://ec2-54-242-33-175.compute-1.amazonaws.com:8080/item
+
+No caso de não haver produtos, para fazer o teste em conjunto com o front-end, pode-se popular o banco de itens com o json:
 ```
 {
     "preco": 2000,
@@ -29,7 +32,7 @@ Para fazer o teste em conjunto com o front-end, pode-se popular o banco de itens
     "descricao": "caneca"
 }
 ```
-no endpoint: http://ec2-54-242-33-175.compute-1.amazonaws.com:8080/item, com o metodo POST
+fazendo um POST no endpoint: http://ec2-54-242-33-175.compute-1.amazonaws.com:8080/item
 
 ## Organização dos pacotes
 
